@@ -4,5 +4,5 @@
     Valid Discharge Summary Prediction(Problem 2)
 
 ## TEAM
-Jigya Shah
-Amitha Nayak
+* Jigya Shah
+* Amitha Nayak
