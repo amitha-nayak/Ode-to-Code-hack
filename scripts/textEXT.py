@@ -14,7 +14,7 @@ class textEXTR:
         mime_type = 'application/pdf'
 
         # How many pages should be grouped into each json output file.
-        batch_size = 4
+        batch_size = 2
 
         client = vision.ImageAnnotatorClient()
 
@@ -36,7 +36,7 @@ class textEXTR:
         operation = client.async_batch_annotate_files(
             requests=[async_request])
 
-        print('Waiting for the operation to finish.')
+        #print('Waiting for the operation to finish.')
         operation.result(timeout=420)
 
         # Once the request has completed and the output has been
@@ -50,20 +50,24 @@ class textEXTR:
         bucket = storage_client.get_bucket(bucket_name)
 
         blob_list = list(bucket.list_blobs(prefix=prefix))
-
+        #print(blob_list)
         # Process the first output file from GCS.
         # Since we specified batch_size=2, the first response contains
         # the first two pages of the input file.
-        output = blob_list[0]
-        #print(output)
-        output.download_to_filename('inputnew.json')
-        f=open('inputnew.json',)
-        df=json.load(f)
-        s=[]
-        for i in df['responses']:
-            s.append(i['fullTextAnnotation']['text'])
-        s="\n".join(s)
-        return s
+        o=[]
+        for j in range(len(blob_list)):
+            s=[]
+            output = blob_list[j]
+            output.download_to_filename('inputnew.json')
+            f=open('inputnew.json',)
+            df=json.load(f)
+            #print(df['responses'])
+            for i in df['responses']:
+                if "fullTextAnnotation" in i:
+                    s.append(i['fullTextAnnotation']['text'])
+            s="\n".join(s)
+            o.append(s)
+        return o
         
     def main(self):
         storage_client = storage.Client()
@@ -76,13 +80,15 @@ class textEXTR:
             print(blobs_specific[i].name)
             text=self.async_detect_document('gs://riscovry_documents/'+blobs_specific[i].name,'gs://riscovry_documents/'+str(j))
             valid=0
-            df = df.append({'text':text,'valid':valid},ignore_index=True)
+            for i in text:
+                df = df.append({'text':i,'valid':valid},ignore_index=True)
             j+=1
         blobs_specific = list(bucket.list_blobs(prefix='Invalid'))
         for i in range(1,len(blobs_specific)):
             print(blobs_specific[i].name)
             text=self.async_detect_document('gs://riscovry_documents/'+blobs_specific[i].name,'gs://riscovry_documents/'+str(j))
             valid=1
-            df = df.append({'text':text,'valid':valid},ignore_index=True)
+            for i in text:
+                df = df.append({'text':i,'valid':valid},ignore_index=True)
             j+=1
         return df
