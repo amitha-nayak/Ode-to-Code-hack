@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="static/main.css">
+    <title>
+    Byte-website
+    </title>
+    </head>
+    <body class="align-middle"> 
+        <div class="container">
+    <h1>BYTES WEBSITE</h1>
+        <p>Give the pdf file as input:</p>
+    <br>
+    <form method="POST" class="post-form" enctype="multipart/form-data">  
+        {% csrf_token %}  
+        {{ form.as_p }}  
+    <br>
+    <button type="submit" class="save btn btn-secondary">Save</button>  
+    </form> 
+    </div>
+</body>
+<script type="text/javascript" src="static/main.js"></script>
+</html>

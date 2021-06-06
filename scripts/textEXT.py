@@ -1,6 +1,7 @@
 from google.cloud import storage
 import pandas as pd
 import numpy as np
+
 class textEXTR:
 
     def async_detect_document(self,gcs_source_uri, gcs_destination_uri):
