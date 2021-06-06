@@ -8,7 +8,7 @@
 
 <hr>
     
-**Working website on public gcp url: http://34.70.84.140:8000/**(If the link doesnt work please reach out to us)(jigyas15@gmail.com)
+**Working website on public gcp url: http://34.70.84.140:8000/** (If the link doesnt work please reach out to us)(jigyas15@gmail.com or nayak.amit.blr@gmail.com)
 
 <hr>
     
