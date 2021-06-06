@@ -12,7 +12,11 @@
 ## BASIC OVERVIEW
 - Extraction of batched text from multipage PDF using Google's Vision API
 - Implementing transfer learning on AWD-LSTM Text classification model
-- Display results on embedded Django Server on Google VM
+- Display results on an embedded Django Server running on a Google VM
+
+## DETAILS
+- Trained on a handpicked minimal dataset with edges cases like health records and medical research papers.
+- ~89% accuracy attained on AWD-LSTM model
 
 ## TEAM BYTES
 * Jigya Shah
