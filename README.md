@@ -21,8 +21,17 @@
 - Display results on an embedded Django Server running on a Google VM
 
 ## DETAILS
-- Trained on a handpicked minimal dataset with edges cases like health records and medical research papers.
-- ~89% accuracy attained on AWD-LSTM model
+- Trained on a handpicked minimal dataset with edges cases like health records and medical research papers. All stored on GCP bucket.
+- ~89% accuracy attained on AWD-LSTM model after 3 epochs with a training set of ~50 PDF files
+
+## CODE OVERVIEW
+- TextExtraction.ipynb: handpicked PDF dataset on Cloud Storage -> Vision API -> JSON on Cloud Storage
+- Model.ipynb: JSON on Cloud Storage -> Training of AWD-LSTM -> exporting model 
+- scripts/testmodel.py: runs the fine-tuned model on django frontend
+- bytes: django files 
+
+## HAVE A LOOK
+<img src="/images/website-look.PNG" alt="front-end">
 
 ## TEAM BYTES
 * Jigya Shah
