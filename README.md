@@ -5,6 +5,12 @@
 
 ## PROBLEM STATEMENT CHOSEN:
     Valid Discharge Summary Prediction(Problem 2)
+
+<hr>
+    
+**Temporarily hosted at gcp url http://34.70.84.140:8000/**
+
+<hr>
     
 ## TECHSTACK
     Django, HTML, CSS, JavaScript, Pytorch+FastAI, Google Cloud Platform (VM, Cloud Storage)
