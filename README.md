@@ -1,5 +1,8 @@
 # Riskcovry-Hackathon
 
+![forthebadge energy-drink](https://forthebadge.com/images/badges/check-it-out.svg)
+![forthebadge energy-drink](https://forthebadge.com/images/badges/powered-by-black-magic.svg)
+
 ## PROBLEM STATEMENT CHOSEN:
     Valid Discharge Summary Prediction(Problem 2)
     
