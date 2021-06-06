@@ -8,7 +8,7 @@
 
 <hr>
     
-**Temporarily hosted at gcp url http://34.70.84.140:8000/**
+**Working website on public gcp url: http://34.70.84.140:8000/**
 
 <hr>
     
