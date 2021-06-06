@@ -11,7 +11,13 @@
 **Working website on public gcp url: http://34.70.84.140:8000/** (If the link doesnt work please reach out to us)(jigyas15@gmail.com or nayak.amit.blr@gmail.com)
 
 <hr>
+
+## UPDATE => WORKS AS AN API
+<img src="/images/api.png" alt="api">
     
+**Note that the PDF should be sent as form-data with key set as 'file'**
+
+
 ## TECHSTACK
     Django, HTML, CSS, JavaScript, Pytorch+FastAI, Google Cloud Platform (VM, Cloud Storage)
     
